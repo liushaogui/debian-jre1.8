@@ -3,7 +3,7 @@ FROM debian:sid-slim
 MAINTAINER runcare<larrygui@foxmail.com>
 
 ARG JRE_VERSION="server-jre-8u251-linux-x64.tar.gz"
-#ENV	JDK_DOWNLOAD_URL  http://cdn01.qikesh.com/jre/$JRE_VERSION
+#ENV	JDK_DOWNLOAD_URL  http://cdn01.qikesh.com/jre/$JRE_VERSION ##备用下载地址
 ENV	JRE_DOWNLOAD_URL  https://darensh.oss-cn-shanghai.aliyuncs.com/jre/$JRE_VERSION
 
 RUN apt-get update && apt-get -y install curl
