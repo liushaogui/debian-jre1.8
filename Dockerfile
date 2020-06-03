@@ -1,5 +1,6 @@
 FROM debian:sid-slim
 
+# 更新版本1
 MAINTAINER runcare<larrygui@foxmail.com>
 
 ARG JRE_VERSION="server-jre-8u251-linux-x64.tar.gz"
@@ -16,9 +17,7 @@ RUN mkdir -p /tmp/dependencies  \
 
 #如果修改JRE_VERSION中的版本号，需要对应修改JAVA_HOME路径中的版本
 ENV JAVA_HOME /usr/local/java/jdk1.8.0_251
-ENV JRE_HOME $JAVA_HOME/jre
-ENV CLASSPATH .:$JAVA_HOME/lib:$JRE_HOME/lib
-ENV PATH $PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+ENV PATH $PATH:$JAVA_HOME/bin
 ENV TZ Asia/Shanghai
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
